@@ -1,0 +1,41 @@
+<div class="container">
+
+  <h1>create-product works!</h1>
+  <form [formGroup]="createForm" (ngSubmit)="create()">
+    <table>
+      <tr>
+        <td><input placeholder="nhập id" formControlName="id">
+          <p style="color: red" *ngIf="!createForm.get('id')?.valid">Bạn đang lỗi</p>
+        </td>
+      </tr>
+      <tr>
+        <td><input placeholder="nhập name" formControlName="name">
+          <p style="color: red" *ngIf="!createForm.get('name')?.valid">Bạn đang lỗi</p>
+
+        </td>
+      </tr>
+      <tr>
+        <td><input placeholder="nhập price" formControlName="price">
+          <p style="color: red" *ngIf="!createForm.get('price')?.valid">Bạn đang lỗi</p>
+
+        </td>
+      </tr>
+      <tr>
+        <td><input placeholder="nhập image"formControlName="img">
+          <p style="color: red" *ngIf="!createForm.get('img')?.valid">Bạn đang lỗi</p>
+
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <select formControlName="status">
+            <option [value]="true">True</option>
+            <option [value]="false">False</option>
+          </select>
+        </td>
+      </tr>
+    </table>
+    <button type="submit" class="btn btn-primary">Create</button>
+  </form>
+</div>
+

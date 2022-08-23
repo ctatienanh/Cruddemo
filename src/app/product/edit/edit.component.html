@@ -1,0 +1,39 @@
+<div class="container">
+  <h1>edit-product works!</h1>
+  <form [formGroup]="editForm" (ngSubmit)="edit()">
+    <table>
+      <tr>
+        <td><input placeholder="nhập id" formControlName="id" ngModel="{{productedit.id}}">
+          <p style="color: red" *ngIf="!editForm.get('id')?.valid">Bạn đang lỗi</p>
+        </td>
+      </tr>
+      <tr>
+        <td><input placeholder="nhập name" formControlName="name" ngModel="{{productedit.name}}">
+          <p style="color: red" *ngIf="!editForm.get('name')?.valid">Bạn đang lỗi</p>
+        </td>
+      </tr>
+      <tr>
+        <td><input placeholder="nhập price" formControlName="price" ngModel="{{productedit.price}}">
+          <p style="color: red" *ngIf="!editForm.get('price')?.valid">Bạn đang lỗi</p>
+
+        </td>
+      </tr>
+      <tr>
+        <td><input placeholder="nhập image"formControlName="img" ngModel="{{productedit.img}}">
+          <p style="color: red" *ngIf="!editForm.get('img')?.valid">Bạn đang lỗi</p>
+
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <select formControlName="status">
+            <option [value]="true">True</option>
+            <option [value]="false">False</option>
+          </select>
+        </td>
+      </tr>
+    </table>
+    <button type="submit" class="btn btn-primary">Edit</button>
+  </form>
+</div>
+
